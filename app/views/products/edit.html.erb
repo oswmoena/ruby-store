@@ -1,0 +1,19 @@
+<%= form_for @product do |formulario| %>
+
+<div>
+  <%= formulario.label :name %>
+  <%= formulario.text_field :name %>
+</div>
+<div>
+  <%= formulario.label :description %>
+  <%= formulario.text_area :description %>
+</div>
+<div>
+  <%= formulario.label :price %>
+  <%=formulario.number_field :price %>
+</div>
+<div>
+  <%=formulario.submit %>
+</div>
+
+<% end %>
