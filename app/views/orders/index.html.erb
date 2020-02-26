@@ -1,0 +1,26 @@
+<h1>Listado de Ordenes</h1>
+<table class="table table-striped">
+  <tr>
+
+    <thead>
+      <th>Numero de Orden</th>
+      <th>Precio Final</th>
+      <th>Fecha de Creación</th>
+      <th>Nombre del Cliente</th>
+      <th><%= link_to "Crea una nueva Orden", create_order_path, :class => "btn btn-primary" %></th>
+    </thead>
+  </tr>
+  <tr>
+    <% @orders.each do |order| %>
+    <td><%= order.number %></td>
+    <td><%= order.finalPrice %></td>
+    <td><%= order.date %></td>
+    <td><%= order.customerName %></td>
+    <td>
+      <%= link_to "Editar", edit_order_path(order) %>
+      <br>
+      <%= link_to "Eliminar", order, method: :delete, data: {confirm: "Deseas eliminar esta Orden?"} %>
+    </td>
+  </tr>
+  <% end %>
+</table>

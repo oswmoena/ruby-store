@@ -1,0 +1,19 @@
+<%= form_for @order do |formulario| %>
+
+<div>
+  <%= formulario.label :number %>
+  <%= formulario.number_field :number %>
+</div>
+<div>
+  <%= formulario.label :finalPrice %>
+  <%= formulario.number_field :finalPrice %>
+</div>
+<div>
+  <%= formulario.label :customerName %>
+  <%= formulario.text_field :customerName %>
+</div>
+<div>
+  <%=formulario.submit %>
+</div>
+
+<% end %>

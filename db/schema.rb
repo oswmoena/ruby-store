@@ -10,12 +10,54 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_02_21_215535) do
+ActiveRecord::Schema.define(version: 2020_02_26_004231) do
 
-  create_table "products", force: :cascade do |t|
-    t.string "name"
-    t.text "description"
+  create_table "orders", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.integer "number"
+    t.integer "finalPrice"
+    t.datetime "date"
+    t.string "customerName", limit: 200
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "payment_types", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "name", limit: 200
+    t.boolean "validity"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "product_orders", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.integer "idProduct"
+    t.integer "idOrder"
+    t.integer "quantity"
+    t.boolean "validity"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "products", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "name", limit: 200
+    t.integer "idType"
+    t.integer "idStatus"
     t.integer "price"
+    t.text "description"
+    t.boolean "validity"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "statuses", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "name", limit: 200
+    t.boolean "validity"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "types", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "name", limit: 200
+    t.boolean "validity"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

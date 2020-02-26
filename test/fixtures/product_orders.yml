@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  idProduct: 
+  idOrder: 
+  quantity: 1
+  validity: false
+
+two:
+  idProduct: 
+  idOrder: 
+  quantity: 1
+  validity: false

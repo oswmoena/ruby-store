@@ -2,16 +2,8 @@
 
 one:
   name: MyString
-  idType: 
-  idStatus: 
-  price: 1
-  description: MyText
   validity: false
 
 two:
   name: MyString
-  idType: 
-  idStatus: 
-  price: 1
-  description: MyText
   validity: false

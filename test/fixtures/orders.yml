@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  number: 1
+  finalPrice: 1
+  date: 2020-02-25 21:42:22
+  customerName: MyString
+
+two:
+  number: 1
+  finalPrice: 1
+  date: 2020-02-25 21:42:22
+  customerName: MyString

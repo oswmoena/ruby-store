@@ -1,0 +1,22 @@
+<h1>Listado de Tipos</h1>
+
+<table class="table table-striped">
+  <tr>
+    <% @types.each do |type| %>
+    <thead>
+      <th>Nombre</th>
+      <th>Vigencia</th>
+      <th><%= link_to "Crea un nuevo tipo", create_type_path, :class => "btn btn-primary" %></th>
+    </thead>
+  </tr>
+  <tr>
+    <td><%= type.name %></td>
+    <td><%= type.validity %></td>
+    <td>
+      <%= link_to "Editar", edit_type_path(type) %>
+      <br>
+      <%= link_to "Eliminar", type, method: :delete, data: {confirm: "Deseas eliminar este Tipo?"} %>
+    </td>
+  </tr>
+  <% end %>
+</table>
